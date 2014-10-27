@@ -410,6 +410,6 @@ class Solution:
 
 s = Solution()
 A = [6,8,12,5,9,3,4,11]
-print s.combinationSum(A, 31)
+print s.combinationSum(A, 15)
 
 

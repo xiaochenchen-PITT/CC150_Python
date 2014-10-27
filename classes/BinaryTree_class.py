@@ -94,6 +94,27 @@ class BinaryTree:
         else:
             return
 
+    def GetDepth(self, root):
+        if not root:
+            return 0
+        left_depth = GetDepth(root.left)
+        right_depth = GetDepth(root.right)
+        return max(left_depth, right_depth) + 1
+    def IsBalanced(self, root):
+        pass
+    def LeastCommonAncester(self, root, node1, node2):
+        '''Find the Least Common Ancester of node1 and node2'''
+        if not root:
+            return
+        if root.data == node1.data or root.data == node2.data:
+            return root
+        l = LeastCommonAncester(root.left, node1, node2)
+        r = LeastCommonAncester(root.right, node1, node2)
+
+        if l and r:
+            return root
+        return l if l else r
+
     # find Maximum Path Sum Leetcode  
     level = 0
     solution_max = - 10**10

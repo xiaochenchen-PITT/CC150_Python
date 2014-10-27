@@ -31,7 +31,7 @@ class BinaryHeap:
 	def Del(self, data):
 		self.heap.remove(data)
 		self.currSize -= 1
-		self.__heaplify(self.currSize-1)
+		self.heaplify(self.currSize-1)
 
 	def Pop(self):
 		self.currSize -= 1

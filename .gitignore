@@ -1,0 +1,10 @@
+# Please ignore .DS_Store
+.DS_Store
+# And ignore simulated annealing...
+simulated annealing.py
+# ignore .pyc
+*.pyc
+# ignore .txt
+*.txt
+# ignore .html
+*.html
