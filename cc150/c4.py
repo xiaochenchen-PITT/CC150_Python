@@ -216,14 +216,72 @@ NOTE: This is not necessarily a binary search tree.
 # print FindLCA(root, root.left.left.right, root.left.right)
 
 
+'''4.7 You have two very large binary trees: T1, with millions of nodes, 
+and T2, with hundreds of nodes Create an algorithm to decide if T2 is 
+a subtree of T1
+'''
+# def IsSub(node1, node2): # node1 is big tree, node2 is small tree
+# 	if not node2: # empty tree is always a subtree
+# 		return True
+# 	return IsSub_recur(node1,node2)
 
-		
+# def IsSub_recur(node1, node2):
+# 	if not node1: # exit, node1 reaches the leaf but still no match
+# 		return False
+# 	if node1.data == node2.data: # found a match, go check wether each following nodes match 
+# 		return IsMatch(node1, node2)
+# 	# Recursively go along tree 1 and check for match
+# 	return (IsSub_recur(node1.left, node2) or IsSub_recur(node1.right, node2))
 
+# def IsMatch(node1, node2):
+# 	if not node1 and not node2:
+# 		return True
+# 	if not node1 or not node2: 
+# 		return False
+# 	if node1.data == node2.data:
+# 		return (IsMatch(node1.left, node2.left) or IsMatch(node1.right, node2.right))
+# 	else:
+# 		return False
+# If it is not this big(millions of nodes...), we can record the in-order and pre-order
+# of both tree1 and tree2, and check whether one is the substrings of the other.
 
+'''4.8 You are given a binary tree in which each node contains a value. 
+Design an algorithm to print all paths which sum up to that value. 
+Note that it can be any path in the tree - it does not have to start at the root.
+'''
+# def FindSumPath(root, target, path = []):
+# 	'''define path : only going towards leaf'''
+# 	if not root:
+# 		return
+# 	path.append(root.data)
+# 	# print 'root, path', root.data, path
 
+# 	s = 0
+# 	i = 0
+# 	for node_data in path[::-1]:
+# 		s += node_data
+# 		i += 1 # i is for restricting the end of printing elements in path
+# 		if s == target:
+# 			PrintThisPath(path, i)
+# 	FindSumPath(root.left, target, path)
+# 	FindSumPath(root.right, target, path)
+# 	path.pop()	
 
+# def PrintThisPath(path, i):
+# 	path_new = path[::-1]
+# 	for node in path_new[:i]:
+# 		print node,
+# 	print ''
 
+# root = classes.BinaryTree_class.BinaryTree(1)
+# root.InsertLeft(2)
+# root.InsertRight(7)
+# root.left.InsertLeft(3)
+# root.left.InsertRight(6)
+# root.right.InsertRight(8)
+# root.left.left.InsertLeft(4)
+# root.left.left.InsertRight(5)
+# root.left.left.right.InsertRight(10)
 
-
-
+# FindSumPath(root, 21)
 

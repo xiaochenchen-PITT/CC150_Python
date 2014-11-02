@@ -384,32 +384,33 @@
 # print s.combine(1,0)
 
 # Combination Sum 
-class Solution:
-    # @param candidates, a list of integers
-    # @param target, integer
-    # @return a list of lists of integers
-    def combinationSum(self, candidates, target):
-        candidates.sort()
-        self.solution_list = []
-        new_list = []
-        self.DFS(candidates, target, new_list)
-        return self.solution_list
+# class Solution:
+#     # @param candidates, a list of integers
+#     # @param target, integer
+#     # @return a list of lists of integers
+#     def combinationSum(self, candidates, target):
+#         candidates.sort()
+#         self.solution_list = []
+#         new_list = []
+#         self.DFS(candidates, target, new_list)
+#         return self.solution_list
         
-    def DFS(self, candidates, target, new_list):
-        if target < 0:
-            return
-        if target == 0:
-            new_list.sort()
-            if not(new_list in self.solution_list):
-                self.solution_list.append(new_list)
-            return 
-        for i in xrange(0, len(candidates)):
-            if target < candidates[i]:
-                break
-            self.DFS(candidates, target - candidates[i], new_list + [candidates[i]])
+#     def DFS(self, candidates, target, new_list):
+#         if target < 0:
+#             return
+#         if target == 0:
+#             new_list.sort()
+#             if not(new_list in self.solution_list):
+#                 self.solution_list.append(new_list)
+#             return 
+#         for i in xrange(0, len(candidates)):
+#             if target < candidates[i]:
+#                 break
+#             self.DFS(candidates, target - candidates[i], new_list + [candidates[i]])
 
-s = Solution()
-A = [6,8,12,5,9,3,4,11]
-print s.combinationSum(A, 15)
+# s = Solution()
+# A = [3, 5, 4, 6, 9]
+# print s.combinationSum(A, 15)
+
 
 

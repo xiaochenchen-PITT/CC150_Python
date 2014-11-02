@@ -26,10 +26,10 @@ class LinkedList:
 
 		if self.head.data:  # if not empty
 			self.current_node.next = new_node
-			self.current_node = new_node
+			self.current_node = self.current_node.next
 		else:
 			self.head = new_node
-			self.current_node = new_node
+			self.current_node = self.head
 
 	def DelNode(self, data):
 		'''Delete the node with data.'''

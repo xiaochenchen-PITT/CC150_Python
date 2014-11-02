@@ -29,14 +29,14 @@ class DirectedGraph:
 			self.graph[start].append(end)
 
 	def FindPath(self, start, end, path = []):	# DFS
-		path = path + [start]
 		if start == end:  # exit 
+			path += [start]
 			return path
 		if start not in self.graph: # dead end
 			return 
 		for node in self.graph[start]:
 			if node not in path:  # path itself marked the visited nodes.
-				return self.FindPath(node, end, path)
+				return self.FindPath(node, end, path + [start])
 		
 	def FindAllPath(self, start, end):
 		path = []
@@ -73,7 +73,7 @@ g = DirectedGraph(graph)
 g.Connect('K', 'E')
 # print g.GetEdges()
 # print g.GetNodes()
-print g.FindPath('A', 'D')
+print g.FindPath('A', 'C')
 # print g.FindAllPath('A', 'D')
 # print g.Find_Shortest_Path('A', 'D')
 		
