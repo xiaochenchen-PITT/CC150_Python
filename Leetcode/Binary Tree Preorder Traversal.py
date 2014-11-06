@@ -8,8 +8,9 @@
 class Solution:
     # @param root, a tree node
     # @return a list of integers
+    
     def preorderTraversal(self, root):
-        '''hint: push the parent node in the stack'''
+        # iterative
         stack = []
         preorder = []
         while stack or root:
@@ -21,3 +22,18 @@ class Solution:
                 root = stack.pop()
                 root = root.right
         return preorder
+    
+    # def preorderTraversal(self, root):
+    #     # recursive
+    #     self.res = []
+    #     self.DFS(root)
+    #     return self.res
+        
+    # def DFS(self, root):
+    #     if not root:
+    #         return 
+    #     self.res.append(root.val)
+    #     self.DFS(root.left)
+    #     self.DFS(root.right)
+            
+        

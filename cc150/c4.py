@@ -6,39 +6,39 @@ import classes.LinkedList_class
 For the purposes of this question, a balanced tree is defined to be a tree 
 such that no two leaf nodes differ in distance from the root by more than one.
 '''
-# max_depth = 1
-# flag = True
-# def isBalanced(root, depth):
-# 	# max_depth = 1
-# 	# flag = True
-# 	return DFS(root, depth)
-# def DFS(root, depth):
-# 	global max_depth, flag
-# 	if not root:
-# 		if depth - 1 < max_depth - 1:
-# 			flag = False
-# 			print 'flag changed!'
-# 		max_depth = depth - 1 
-# 		return True
-# 	else:
-# 		print 'node', root.data
-# 		print 'depth', depth
-# 		print 'max_depth', max_depth
-# 		print ''
-# 		DFS(root.left, depth + 1)
-# 		DFS(root.right, depth + 1)
-# 	return flag
+max_depth = 1
+flag = True
+def isBalanced(root, depth):
+	# max_depth = 1
+	# flag = True
+	return DFS(root, depth)
+def DFS(root, depth):
+	global max_depth, flag
+	if not root:
+		if depth - 1 < max_depth - 1:
+			flag = False
+			print 'flag changed!'
+		max_depth = depth - 1 
+		return True
+	else:
+		print 'node', root.data
+		print 'depth', depth
+		print 'max_depth', max_depth
+		print ''
+		DFS(root.left, depth + 1)
+		DFS(root.right, depth + 1)
+	return flag
 
-# root = classes.BinaryTree_class.BinaryTree(1)
-# root.InsertLeft(2)
-# root.InsertRight(7)
-# root.left.InsertLeft(3)
-# root.left.InsertRight(6)
-# root.right.InsertRight(8)
-# root.left.left.InsertLeft(4)
-# root.left.left.InsertRight(5)
-# root.left.left.right.InsertRight(10)
-# print isBalanced(root, 1)
+root = classes.BinaryTree_class.BinaryTree(1)
+root.InsertLeft(2)
+root.InsertRight(7)
+root.left.InsertLeft(3)
+root.left.InsertRight(6)
+root.right.InsertRight(8)
+root.left.left.InsertLeft(4)
+root.left.left.InsertRight(5)
+root.left.left.right.InsertRight(10)
+print isBalanced(root, 1)
 
 '''4.2 Given a directed graph, design an algorithm to find out whether 
 there is a route between two nodes

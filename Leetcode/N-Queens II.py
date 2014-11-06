@@ -11,7 +11,7 @@ class Solution:
     def DFS(self, n, state = [], state_rmc = [], state_rpc = [], row = 0):
         '''state : index is the row, state[index] is col, used for checking row and col collision.
             state_rmc : row-col, used for checking one diagonal(upper right to lower left)
-            state_rpc : row+col, used for checking the other diagonal(upper left to lower right) '''
+            state_rpc : row+col, used for checking the other diagonal(upper left to lower right)'''
         if row == n:
             self.count += 1
         for col in range(0, n):
@@ -21,4 +21,4 @@ class Solution:
 
 
 s = Solution()
-print s.totalNQueens(10)
+print s.totalNQueens(8)

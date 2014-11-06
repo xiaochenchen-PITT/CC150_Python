@@ -77,6 +77,21 @@ class BinaryTree:
                 root = check_points.pop()
         return stack[::-1]
 
+    def InOrder_Iter(self, node): # node : root 
+        stack = [] # stack is used for storing checkpoints (parent nodes)
+        while node:
+            while node.left:
+                stack.append(node)
+                node = node.left
+            yield node.data
+            while not node.right:
+                try:
+                    node = stack.pop()
+                except IndexError:
+                    return
+                yield node.data
+            node = node.right
+
     # BFS Travelsal method
     def LevelOrder(self, root, this_level = None):
         if this_level != []:
