@@ -5,6 +5,6 @@ simulated annealing.py
 # ignore .pyc
 *.pyc
 # ignore .txt
-*.txt
+# *.txt
 # ignore .html
-*.html
+# *.html
